@@ -1,0 +1,273 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+# 网站标题
+title: '流明史论'
+#网站副标题,即我们网页标签对应的文字
+subtitle: '鸽以永治'
+#网站描述
+description: '冬至夕雪の不知道干什么用的网站'
+# 网站关键词，便于别人搜索到你
+keywords: '流明史论'
+# 作者名称
+author: '冬至夕雪/紫陌'
+# 语言
+language: zh-CN
+#时区
+timezone: Asia/Shanghai
+
+#固定文章链接:npm install hexo-abbrlink --save
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: http://www.erat.top
+permalink: posts/:abbrlink.html
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+## 这个就是首页文章显示数量
+index_generator:
+  path: ''
+  per_page: 8
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: butterfly
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+- type: git
+  repository: git@github.com:ws-es/ROTT.git
+  branch: main
+- type: baidu_url_submitter
+
+
+# 代码:npm install hexo-generator-search --save
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  content: true
+
+# 首页分类磁贴
+# 代码:npm install hexo-butterfly-categories-card --save
+# hexo-butterfly-categories-card
+# see https://akilar.top/posts/a9131002/
+categoryBar:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd # odd：3列 | even：4列
+  row: 1 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - descr: ink
+      cover: http://www.erat.top/img/004.webp
+    - descr: 资源分享
+      cover: http://www.erat.top/img/004.webp
+    - descr: 时代流明
+      cover: http://www.erat.top/img/004.webp
+    - descr: 夜
+      cover: http://www.erat.top/img/004.webp
+    - descr: 天理误悟
+      cover: http://www.erat.top/img/004.webp
+    - descr: 流明史论
+      cover: http://www.erat.top/img/004.webp
+    - descr: 测试
+      cover: http://www.erat.top/img/004.webp
+    - descr: 异梦
+      cover: http://www.erat.top/img/004.webp
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+  
+butterfly_article_double_row:
+  enable: true
+  
+#代码:npm install hexo-tag-aplayer --save
+# 音乐插件
+aplayer: 
+  meting: true
+  asset_inject: false
+
+# 首页文章滚动
+# 代码:npm install hexo-butterfly-swiper --save
+# hexo-butterfly-swiper
+# see https://akilar.top/posts/8e1264d1/
+swiper:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  timemode: update #date/updated
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  default_descr: 再怎么看我也不知道怎么描述它的啦！
+  swiper_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css #swiper css依赖
+  swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
+  custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
+
+baidu_url_submit:
+  count: 10               # 提交最新的多少个链接，可以提高一些
+  host: https://www.erat.top/   # 在百度站长平台中添加的域名
+  token: ldURCrB8uq96a1jD      # 秘钥
+  path: baidu_urls.txt   # 文本文档的地址， 新链接会保存在此文本文档里
+
+# tag-plugins-plus
+# see https://akilar.top/posts/615e2dec/
+tag_plugins:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  issues: false #issues标签依赖注入开关
+  link:
+    placeholder: /img/link.png #link_card标签默认的图标图片
+  CDN:
+    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+
+# artitalk see https://artitalk.js.org/
+# hexo-butterfly-artitalk-pro
+# see https://akilar.top/posts/f1004b1d/
+artitalk:
+  enable:
+    card: false # 侧边栏开关
+    page: true #页面开关
+  # 侧栏相关配置项
+  priority: 5 #过滤器优先权
+  enable_page: all # 应用页面
+  layout: # 挂载容器类型
+    type: class
+    name: sticky_layout
+    index: 0
+  # 页面相关配置项
+  path: artitalk
+  front_matter:
+    title: 说说(？
+  # 公共配置项
+  appId: YW5SsWNJdTfCnd2nHYPvWxVX-MdYXbMMI
+  appKey: 5bXz7u0RuD9NqoEFV2xCkHIu
+  exclude:
+    - /artitalk/
+    - /posts/ #需要abbrlink插件支持
+  js: https://npm.elemecdn.com/artitalk
+  card_css: https://npm.elemecdn.com/hexo-butterfly-artitalk-pro/lib/card.css
+  card_visual_js: https://npm.elemecdn.com/hexo-butterfly-artitalk-pro/lib/card_visual.js
+  option:
+    serverURL: https://artitalk.erat.top #将此处的********替换为你的appId前八位
+    lang: zh
+    pageSize: 2
+    color1: '#49b1f5'
+    color2: '#00c4b6'
+    atEmoji: {
+      '睡了':'https://jsdelivr.erat.top/gh/ws-es/gallery@1.0/sticker/TN/TN-睡了.webp',
+      'Mafumafu2':'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749455.png'}
+
+# hexo-hide-posts
+hide_posts:
+  # 可以改成其他你喜欢的名字
+  filter: hidden
+  # 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见
+  # 常见的位置有：index, tag, category, archive, sitemap, feed, etc.
+  # 留空则默认全部隐藏
+  public_generators: []
+  # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
+  noindex: true
+
+# hexo-blog-encrypt
+encrypt: 
+  abstract: 本文章被加密了, 请输入密码查看, 加密原因见“关于”
+  message: 本文章被加密了, 请输入密码查看, 加密原因见“关于”
+  tags:
+  - {name: 加密1, password: 密码A}
+  - {name: 加密2, password: 密码B}
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+

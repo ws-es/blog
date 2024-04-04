@@ -1,0 +1,9 @@
+@font-face{
+  font-family:'楷体' ;  /* 字体名自定义即可 */
+  src:url('https://gallery2.erat.top/font/霞鹜文楷.woff2'); /* 字体文件路径 */
+  font-display : swap;
+}
+/* 需要需要的样式 ，后面的为备用字体*/
+h1#site-title {
+  font-family: '楷体', sans-serif;
+}
